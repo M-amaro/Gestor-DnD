@@ -35,9 +35,9 @@
             // CharacterDG
             // 
             this.CharacterDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CharacterDG.Location = new System.Drawing.Point(288, 106);
+            this.CharacterDG.Location = new System.Drawing.Point(239, 31);
             this.CharacterDG.Name = "CharacterDG";
-            this.CharacterDG.Size = new System.Drawing.Size(361, 202);
+            this.CharacterDG.Size = new System.Drawing.Size(501, 261);
             this.CharacterDG.TabIndex = 0;
             this.CharacterDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CharacterDG_CellContentClick);
             // 

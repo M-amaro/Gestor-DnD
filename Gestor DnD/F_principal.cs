@@ -12,22 +12,39 @@ namespace Gestor_DnD
 {
     public partial class F_principal : Form
     {
-        public F_principal()
+        BaseDados bd;
+        int character_id = 0;
+        public F_principal(BaseDados bd)
         {
-            BaseDados bd;
-            int character_id = 0;
-
             InitializeComponent();
+            this.bd = bd;
         }
+
+        private void ListarChar()
+        {
+            CharacterDG.AllowUserToAddRows=false;
+            CharacterDG.ReadOnly = true;
+            CharacterDG.AllowUserToDeleteRows = false;
+            CharacterDG.MultiSelect = false;
+            CharacterDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Characters c = new Characters(bd);
+            CharacterDG.DataSource = c.Listar();
+        }
+
+        private void F_principal_Load(object sender, EventArgs e)
+        {
+            ListarChar();
+        }
+
+
+
+
 
         private void CharacterDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void F_principal_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

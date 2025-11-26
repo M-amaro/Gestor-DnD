@@ -8,7 +8,7 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 namespace Gestor_DnD
 {
-    internal class BaseDados
+    public class BaseDados
     {
         string strligacao;
         string NomeBD;
@@ -59,9 +59,9 @@ namespace Gestor_DnD
                     character_id int identity primary key,
                     name_player varchar(25),
                     name_char varchar(50) not null,
-                    class varchar(15) not null,
-                    race varchar(15) not null,
-                    level int not null default 1, 
+                    class_char varchar(15) not null,
+                    race_char varchar(15) not null,
+                    level_char int not null default 1, 
                     max_hp int default     ,
                     gold int default 0,
                     );
