@@ -62,13 +62,14 @@ namespace Gestor_DnD
                     class_char varchar(15) not null,
                     race_char varchar(15) not null,
                     level_char int not null default 1, 
-                    max_hp int default     ,
+                    max_hp int default 20,
                     gold int default 0,
                     );
                     create table Items (
                     item_id int identity primary key,
                     item_name varchar(50) not null,
                     item_type varchar(20) not null,
+                    
                     df_bonus int default 0,           
                     dmg_bonus int defualt 0,                  
                     );
@@ -76,6 +77,7 @@ namespace Gestor_DnD
                     slot_id int identity primary key,
                     character_id int references Characters(character_id),
                     slot_type varchar(20) not null,
+                    item_quant int default 1,
                     item_id int references Items(item_id)
                     );";
             comando = new SqlCommand(sql, ligacaoSQL);

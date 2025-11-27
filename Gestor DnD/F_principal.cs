@@ -36,6 +36,45 @@ namespace Gestor_DnD
             ListarChar();
         }
 
+        private void CharacterDG_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int linha=CharacterDG.CurrentCell.RowIndex;
+            if (linha == -1)
+            {
+                return;
+            }
+            character_id = int.Parse(CharacterDG.Rows[linha].Cells[0].Value.ToString());
+
+            Characters c=new Characters(bd);
+            c.character_id= character_id;
+            c.Procurar();
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

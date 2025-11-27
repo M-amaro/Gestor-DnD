@@ -119,7 +119,22 @@ namespace Gestor_DnD
         public DataTable Listar()
         {
             return bd.DevolveSQL("SELECT name_player,name_char,class_char, race_char, level_char, gold FROM Characters ORDER BY name_player");
-        }>
+        }
+        public void Procurar()
+        {
+            string sql = "SELECT * FROM Characters WHERE character_id=" + character_id;
+            DataTable temp = bd.DevolveSQL(sql);
+            if (temp != null && temp.Rows.Count > 0)
+            {
+                DataRow linha = temp.Rows[0];
+                this.name_player = linha["name_player"].ToString();
+                this.name_char = linha["name_char"].ToString();
+                this.class_char = linha["class_char"].ToString();
+                this.race_char = linha["race_char"].ToString();
+                this.level_char = int.Parse(linha["level_char"].ToString());
+                this.gold = int.Parse(linha["gold"].ToString());
+            }
+        }
     }
 
 }
